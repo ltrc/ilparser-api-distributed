@@ -1,0 +1,36 @@
+[submodule "modules/common-computehead/lib/ilparser/common/computehead"]
+	path = modules/common-computehead/lib/ilparser/common/computehead
+	url = https://github.com/ltrc/perl-head-computation.git
+[submodule "modules/hin-chunker/lib/ilparser/hin/chunker"]
+	path = modules/hin-chunker/lib/ilparser/hin/chunker
+	url = https://github.com/ltrc/hin-chunker.git
+[submodule "modules/hin-tokenizer/lib/ilparser/hin/tokenizer"]
+	path = modules/hin-tokenizer/lib/ilparser/hin/tokenizer
+	url = https://github.com/ltrc/indic-tokenizer.git
+[submodule "modules/common-computevibhakti/lib/ilparser/common/computevibhakti"]
+	path = modules/common-computevibhakti/lib/ilparser/common/computevibhakti
+	url = https://github.com/ltrc/vibhakti-computation.git
+[submodule "modules/common-pickonemorph/lib/ilparser/common/pickonemorph"]
+	path = modules/common-pickonemorph/lib/ilparser/common/pickonemorph
+	url = https://github.com/ltrc/pick-one-morph.git
+[submodule "modules/hin-guessmorph/lib/ilparser/hin/guessmorph"]
+	path = modules/hin-guessmorph/lib/ilparser/hin/guessmorph
+	url = https://github.com/ltrc/hin-guess-morph.git
+[submodule "modules/hin-morph/lib/ilparser/hin/morph"]
+	path = modules/hin-morph/lib/ilparser/hin/morph
+	url = https://github.com/ltrc/hin-morph-analyser.git
+[submodule "modules/hin-postagger/lib/ilparser/hin/postagger"]
+	path = modules/hin-postagger/lib/ilparser/hin/postagger
+	url = https://github.com/ltrc/hin-POS-tagger.git
+[submodule "modules/hin-pruning/lib/ilparser/hin/pruning"]
+	path = modules/hin-pruning/lib/ilparser/hin/pruning
+	url = https://github.com/ltrc/hin-pruning.git
+[submodule "modules/hin-dependencyparse/lib/ilparser/hin/dependencyparse"]
+	path = modules/hin-dependencyparse/lib/ilparser/hin/dependencyparse
+	url = https://bitbucket.org/riyazbhat/ilparser.git
+[submodule "modules/hin-wx2utf/lib/ilparser/hin/wx2utf"]
+	path = modules/hin-wx2utf/lib/ilparser/hin/wx2utf
+	url = https://github.com/ltrc/indic-wx-converter.git
+[submodule "modules/hin-dependencyparse/lib/ilparser/hin/indic-wx-converter"]
+	path = modules/hin-dependencyparse/lib/ilparser/hin/indic-wx-converter
+	url = https://github.com/ltrc/indic-wx-converter.git
