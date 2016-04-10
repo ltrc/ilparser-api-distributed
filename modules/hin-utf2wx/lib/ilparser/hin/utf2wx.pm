@@ -1,11 +1,11 @@
-package ilparser::hin::wx2utf;
+package ilparser::hin::utf2wx;
 use Dir::Self;
 use Data::Dumper;
 use strict;
 use warnings;
 
 my %daemons = (
-    "parser" => {
+    "utf2wx" => {
         "port" => "12004",
         "path" => "converter-indic",
         "args" => "--l hin --s utf --m --daemonize --port"
@@ -44,11 +44,11 @@ sub run_daemons {
 sub process {
     my %args = @_;
     utf8::encode($args{data});
-    my $result = call_daemon("wx2utf", $args{data});
+    my $result = call_daemon("utf2wx", $args{data});
     utf8::decode($result);
     return $result;
 }
 
-run_daemons(("parser"));
+run_daemons(("utf2wx"));
 
 1;
