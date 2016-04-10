@@ -28,9 +28,9 @@
 [submodule "modules/hin-dependencyparse/lib/ilparser/hin/dependencyparse"]
 	path = modules/hin-dependencyparse/lib/ilparser/hin/dependencyparse
 	url = https://bitbucket.org/riyazbhat/ilparser.git
-[submodule "modules/hin-wx2utf/lib/ilparser/hin/wx2utf"]
-	path = modules/hin-wx2utf/lib/ilparser/hin/wx2utf
-	url = https://github.com/ltrc/indic-wx-converter.git
 [submodule "modules/hin-dependencyparse/lib/ilparser/hin/indic-wx-converter"]
 	path = modules/hin-dependencyparse/lib/ilparser/hin/indic-wx-converter
+	url = https://github.com/ltrc/indic-wx-converter.git
+[submodule "modules/hin-utf2wx/lib/ilparser/hin/utf2wx"]
+	path = modules/hin-utf2wx/lib/ilparser/hin/utf2wx
 	url = https://github.com/ltrc/indic-wx-converter.git
