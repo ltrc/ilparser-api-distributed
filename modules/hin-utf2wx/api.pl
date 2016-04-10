@@ -7,14 +7,14 @@ use lib qw(lib);
 use List::Util qw(reduce);
 use Mojolicious::Lite;
 use Mojo::Redis2;
-use ilparser::hin::wx2utf;
+use ilparser::hin::utf2wx;
 use Mojo::Pg;
 
 app->config(hypnotoad => {listen => ['http://*:80']});
 
 my $pg = Mojo::Pg->new('postgresql://ddag:nlprocks@localhost/pipelines');
 
-my $modulename = "hin.wx2utf";
+my $modulename = "hin.utf2wx";
 helper redis => sub {
     state $r = Mojo::Redis2->new(url => "redis://redis:6379");
 };
@@ -39,7 +39,7 @@ sub process {
     } else {
         @newhash{ map { s/_[^_]*$//r } keys %{$hash} } = values %{$hash};
     }
-    return ilparser::hin::wx2utf::process(%newhash);
+    return ilparser::hin::utf2wx::process(%newhash);
 }
 
 sub genError {
@@ -71,11 +71,13 @@ post '/pipeline' => sub {
     my @ilparser_inputs = map {@$_[0]} $ilparser_dag->edges_to($ilparser_module);
     my $db = $pg->db;
     foreach (@ilparser_inputs) {
+        utf8::encode($ilparser_data->{$_});
 	$db->query('insert into jobs (jobid, modid, module, data) values (?, ?, ?, ?)', $ilparser_jobid, $ilparser_modid, $_, $ilparser_data->{$_}) if $ilparser_data->{$_};
     }
     my %content;
     my $results = $db->query('select * from jobs where jobid = (?) and modid = (?)', $ilparser_jobid, $ilparser_modid);
     while (my $next = $results->hash) {
+        utf8::decode($next->{data});
         $content{$next->{module}} = $next->{data};
     }
     if (@ilparser_inputs == keys %content) {

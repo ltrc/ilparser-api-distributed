@@ -71,11 +71,13 @@ post '/pipeline' => sub {
     my @ilparser_inputs = map {@$_[0]} $ilparser_dag->edges_to($ilparser_module);
     my $db = $pg->db;
     foreach (@ilparser_inputs) {
+        utf8::encode($ilparser_data->{$_});
 	$db->query('insert into jobs (jobid, modid, module, data) values (?, ?, ?, ?)', $ilparser_jobid, $ilparser_modid, $_, $ilparser_data->{$_}) if $ilparser_data->{$_};
     }
     my %content;
     my $results = $db->query('select * from jobs where jobid = (?) and modid = (?)', $ilparser_jobid, $ilparser_modid);
     while (my $next = $results->hash) {
+        utf8::decode($next->{data});
         $content{$next->{module}} = $next->{data};
     }
     if (@ilparser_inputs == keys %content) {
