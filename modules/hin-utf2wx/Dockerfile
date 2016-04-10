@@ -1,7 +1,7 @@
 FROM            ltrc/ilparser-dis-base
-COPY            lib /hin-wx2utf/lib
-COPY            api.pl /hin-wx2utf/
-RUN             pip install /hin-wx2utf/lib/ilparser/hin/wx2utf
+COPY            lib /hin-utf2wx/lib
+COPY            api.pl /hin-utf2wx/
+RUN             pip install /hin-utf2wx/lib/ilparser/hin/utf2wx
 ENTRYPOINT      /etc/init.d/postgresql start && \
-                cd /hin-wx2utf && \
+                cd /hin-utf2wx && \
                 hypnotoad -f api.pl
