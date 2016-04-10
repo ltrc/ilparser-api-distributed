@@ -77,7 +77,7 @@ sub process {
 
 sub morph_analyser {
     my %args = @_;
-    return $args{"langobj"}->call_daemon("morph", $args{data});
+    return call_daemon("morph", $args{data});
 }
 
 sub normalizer {
