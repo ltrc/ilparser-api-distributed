@@ -8,13 +8,13 @@ use warnings;
 use Exporter qw(import);
 use vibhakticompute;
 
-sub computevibhakti {
+sub process {
     my %par = @_;
     my $data = $par{'data'};
     my $result = "";
     open OUTFILE, '>', \$result  or die $!;
     select(OUTFILE);
-    process(\$data, 1);
+    vibhakticompute(\$data, 1);
     select(STDOUT);
     return $result;
 }
