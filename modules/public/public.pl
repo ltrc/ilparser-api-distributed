@@ -51,7 +51,9 @@ post '/' => sub {
         my ($msg) = @_;
         %res_data = (%res_data, %{from_json($msg, { utf8  => 1 })->{data}});
         if ($ilparser_dag->vertices == keys %res_data) {
-            $c->render(json => \%res_data);
+            my %res_hash;
+            @res_hash{ map { s/_[^_]*$//r } keys %res_data } = values %res_data;
+            $c->render(json => \%res_hash);
             $redis->unsubscribe([$ilparser_json->{jobid}]);
         }
     };
