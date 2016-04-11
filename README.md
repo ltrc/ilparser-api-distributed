@@ -5,6 +5,11 @@ Refer [ddag-sample](https://github.com/nehaljwani/ddag-sample) for the setup of 
 
 All containers related to this project can be either built from the Dockerfiles provided for each modules, or can be pulled from: [ltrc-public-docker-repo](https://hub.docker.com/u/ltrc/dashboard/)
 
+##Initialize all submodules
+```bash
+git submodule update --recursive --init
+```
+##Setting up containers
 - While setting up docker containers, make sure that the name of the container is specified, and that is used while POSTing the graph to the public API container
 - Containers can be setup like this:
 
