@@ -3,7 +3,7 @@ Repo for seting up a distributed version of ilparser-api using docker
 
 Refer [ddag-sample](https://github.com/nehaljwani/ddag-sample) for the setup of docker swarm.
 
-All containers related to this project can be either built from the Dockerfiles provided for each modules, or can be pulled from: [ltrc-public-docker-repo](https://hub.docker.com/u/ltrc/dashboard/)
+All containers related to this project can be either built from the Dockerfiles provided for each modules, or can be pulled from: [ltrc-public-docker-repo](https://hub.docker.com/u/ltrc/)
 
 ## Initialize all submodules
 ```bash
