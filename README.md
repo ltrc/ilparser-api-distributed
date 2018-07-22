@@ -5,15 +5,15 @@ Refer [ddag-sample](https://github.com/nehaljwani/ddag-sample) for the setup of 
 
 All containers related to this project can be either built from the Dockerfiles provided for each modules, or can be pulled from: [ltrc-public-docker-repo](https://hub.docker.com/u/ltrc/dashboard/)
 
-##Initialize all submodules
+## Initialize all submodules
 ```bash
 git submodule update --recursive --init
 ```
-##Setting up containers
+## Setting up containers
 - While setting up docker containers, make sure that the name of the container is specified, and that is used while POSTing the graph to the public API container
 - Containers can be setup like this:
 
-    ```bash
+```bash
 $ docker run --net ddag --name common.computevibhakti --hostname common.computevibhakti -dit ltrc/ilparser-common-computevibhakti
 $ docker run --net ddag --name hin.dependencyparse --hostname hin.dependencyparse -dit ltrc/ilparser-hin-dependencyparse
 $ docker run --net ddag --name hin.tokenizer --hostname hin.tokenizer -dit ltrc/ilparser-hin-tokenize
@@ -28,7 +28,7 @@ $ docker run --net ddag --name hin.pruning --hostname hin.pruning -dit ltrc/ilpa
 $ docker run --net ddag --name public --hostname public -dit ltrc/ilparser-public
 ```
 
-##Sample run
+## Sample run
 - Create the file `/tmp/input.txt` with the following content:
 
     ```bash
