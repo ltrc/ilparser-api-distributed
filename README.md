@@ -31,7 +31,7 @@ $ docker run --net ddag --name public --hostname public -dit ltrc/ilparser-publi
 ## Sample run
 - Create the file `/tmp/input.txt` with the following content:
 
-    ```bash
+```bash
    {
   "edges": {
     "input1": [
@@ -75,7 +75,7 @@ $ docker run --net ddag --name public --hostname public -dit ltrc/ilparser-publi
 ```
 - To query, first find out the public IP of the public container, and then:
 
-   ```bash
+```bash
 curl -s -H Expect: 172.18.0.14 --data "@/tmp/input.txt"  | jq . | sed -e 's/\\t/\t/g' -e 's/\\n/\n/g'  -e 's/\\"/\"/g' -e 's/^"//' -e 's/"$//'
 {
   "hin.utf2wx": "<Sentence id="1">
